@@ -361,9 +361,6 @@ func (h *HarborExporter) Collect(outCh chan<- prometheus.Metric) {
 	if collectMetricsGroup[metricsGroupStatistics] {
 		ok = h.collectStatisticsMetric(samplesCh) && ok
 	}
-	if collectMetricsGroup[metricsGroupStatistics] {
-		ok = h.collectSystemVolumesMetric(samplesCh) && ok
-	}
 	if collectMetricsGroup[metricsGroupQuotas] {
 		ok = h.collectQuotasMetric(samplesCh) && ok
 	}
